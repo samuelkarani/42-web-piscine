@@ -1,0 +1,24 @@
+{
+    "name": "rush00",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "vogsphere@vgs.42.us.org:intra/2019/activities/piscine_php_rush00/ckifalo3"
+    },
+    "author": "smbaabu",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^3.0.7",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
+}

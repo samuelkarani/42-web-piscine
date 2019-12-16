@@ -1,0 +1,111 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1568214380289-8bcf84b1cd29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+  background-color: #cccccc;
+}
+header > h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+body {
+  font-family: Arial;
+}
+
+.content {
+  position: relative;
+  height: 60vh;
+  margin: 4vh;
+  text-shadow: none;
+}
+
+.content-row {
+  clear: both;
+  height: 10%;
+}
+
+.cell {
+  float: left;
+  position: relative;
+  width: 5.55%;
+  height: 100%;
+}
+
+.detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 1px;
+  right: 1px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  background-color: rgba(76, 94, 172, 0.95);
+}
+
+.at_num,
+.at_details {
+  position: absolute;
+  font-size: 0.5vw 0.2vh;
+}
+
+.at_details {
+  top: 4px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.at_num {
+  bottom: 4px;
+}
+
+.name {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  margin-top: -4px;
+  font-size: 1.5vw 0.8vh;
+  line-height: 1;
+  height: 9px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.at_details {
+  bottom: 4px;
+  left: 0px;
+  right: 0px;
+}
+
+.cell:nth-child(-n + 2) .detail,
+.cell:nth-child(n + 13) .detail {
+  background-color: rgba(22, 75, 54, 0.95);
+}
+
+.cell:nth-child(1) .detail,
+.content-row:nth-child(2) .cell:nth-child(n + 14) .detail,
+.content-row:nth-child(3) .cell:nth-child(n + 15) .detail,
+.content-row:nth-child(4) .cell:nth-child(n + 16) .detail,
+.content-row:nth-child(5) .cell:nth-child(n + 17) .detail {
+  background-color: rgba(216, 203, 25, 0.95);
+}
+
+.content-row:nth-child(-n + 6) .cell:nth-child(18) .detail {
+  background-color: rgba(19, 62, 126, 0.95);
+}
+
+.content-row:nth-child(n + 9) .detail {
+  background-color: rgba(141, 23, 23, 0.95);
+}
+
+footer {
+  margin-top: 10vh;
+  width: 100%;
+}
+
+footer > i {
+  float: right;
+  margin: 10px 30px 10px 30px;
+  font-family: monospace;
+}

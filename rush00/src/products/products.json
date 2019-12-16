@@ -1,0 +1,17 @@
+[{
+        "name": "iphone",
+        "price": 1000,
+        "image": "https://m.media-amazon.com/images/I/51wV4VdTFkL._AC_UY436_FMwebp_QL65_.jpg",
+        "category": ["electronics"]
+    },
+    {
+        "name": "pixel",
+        "image": "https://m.media-amazon.com/images/I/81T-FKC695L._AC_UL640_FMwebp_QL65_.jpg",
+        "price": 500
+    },
+    {
+        "name": "one plus",
+        "image": "https://m.media-amazon.com/images/I/61+KNE5wllL._AC_UL640_FMwebp_QL65_.jpg",
+        "price": 600
+    }
+]

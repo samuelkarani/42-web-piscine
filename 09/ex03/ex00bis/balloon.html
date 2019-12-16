@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Balloon</title>
+</head>
+<style>
+    #balloon {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <div id="balloon"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+    const Balloon = $('#balloon');
+    const colors = ['red', 'green', 'blue'];
+
+    let i = 0;
+    Balloon.on('click', function() {
+        i += 1;
+        Balloon.css('background', colors[i % 3]);
+        if (Balloon.width() < 420) {
+            Balloon.width(Balloon.width() + 10);
+            Balloon.height(Balloon.height() + 10);
+        } else {
+            Balloon.width(200);
+            Balloon.height(200);
+        }
+    });
+    Balloon.on("mouseleave", function() {
+        i -= 1;
+        Balloon.css('background', colors[Math.abs(i % 3)]);
+        if (Balloon.width() > 200) {
+            Balloon.width(Balloon.width() - 5);
+            Balloon.height(Balloon.height() - 5);
+        }
+    });
+</script>
+
+</html>

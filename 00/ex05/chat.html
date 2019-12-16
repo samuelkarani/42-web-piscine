@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Day of the 42</title>
+    <link href="scumm.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top">
+        <img id="top_image" src="resources/day_of_the_42.png" alt="Welcome!" title="Welcome!">
+        <img id="loupe" src="resources/loupe.png" alt="Search" title="Search">
+        <a href="start.html">
+            <img class="small" src="resources/reload.png" alt="Start from the beginning" title="Start from the beginning">
+        </a>
+        <a href="http://www.relaischateaux.com">
+            <img class="small" src="resources/close.gif" style="margin-top: 80px;" alt="Disconnect" title="I'm tired">
+        </a>
+    </div>
+    <br>
+    <div class="wrap">
+        <div class="left">
+            <img class="icon" src="resources/arrow.png" alt="Advance" title="Advance">
+            <img class="icon" src="resources/main.png" alt="Take" title="Take">
+            <img class="icon" src="resources/oeil.png" alt="Look" title="Look">
+            <img class="icon" src="resources/outil.png" alt="Use" title="Use">
+            <img class="icon" src="resources/chat-icon.png" alt="Speak" title="Speak">
+        </div>
+        <div class="main">
+            <img id="main_image" src="https://previews.123rf.com/images/topvectors/topvectors1710/topvectors171000428/87724560-smiling-male-patient-character-talking-to-psychologist-about-problems-psychotherapy-counseling-psych.jpg" alt="Just a normal day at 42"
+                title="That's donkey">
+        </div>
+        <div class="right">
+            <a href="help.html">
+                <img id="book" class="icon_b" src="resources/book.png" alt="Support team" title="Support team">
+            </a>
+            <a href="faq.html">
+                <img id="book" class="icon_b" src="resources/towel.png" alt="F.A.Q" title="F.A.Q.">
+            </a>
+            <div class="brick" title="Brickwall">
+            </div>
+        </div>
+        <div class="form" style="height:100px">
+            <p style="margin: 20px 10px; padding: 4px; color :red;" id="response">
+            </p>
+            <form onsubmit="handleSubmit(event)">
+                <label id="label" style="margin: 20px 10px; padding: 4px"></label>
+                <input type="text" required>
+                <input value="send" type="submit" />
+            </form>
+        </div>
+    </div>
+    <script>
+        const responses = [
+            "Hello I'm Achmed your psychologist",
+            "Nice to meet you ",
+            "Thats nice to know",
+            `Very good`
+        ]
+        const questions = [
+            "What's your name",
+            "Where are you from?",
+            "Who is your role model?",
+            "To make sure you're human, what's '9 - 2' ?"
+        ]
+        let idx = 0;
+        let wrong = false;
+        let label, response;
+        let name, from, roleModel;
+
+        document.getElementById("label").innerHTML = questions[0];
+        document.getElementById("response").innerHTML = responses[0];
+
+        function getReponse() {
+            if (idx === 1)
+                return `${responses[idx]} ${name}.`
+            if (wrong)
+                return "..."
+            return responses[idx];
+        }
+
+        function getLabel() {
+            label = questions[idx];
+            if (idx === 1)
+                return `Ok ${name}, ${label}`
+            else if (idx === 2)
+                return `Alright ${name} from ${from}, ${label}`
+            else if (idx === 3) {
+                if (wrong)
+                    return `Wrong! Try again, ${name}`
+                else
+                    return label
+            } else {
+                return "WooHooo!"
+            }
+        }
+
+        function update() {
+
+            if (idx === 4) {
+                alert("End of chat, you did well!")
+                window.location.href = 'play.html';
+
+            } else {
+                response = getReponse();
+                label = getLabel();
+                document.getElementById("label").innerHTML = label;
+                document.getElementById("response").innerHTML = response;
+
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const input = e.target.elements[0];
+            const val = input.value;
+            if (idx === 0) {
+                name = val;
+                idx++;
+            } else if (idx === 1) {
+                from = val;
+                idx++;
+            } else if (idx === 2) {
+                roleModel = val;
+                idx++;
+            } else {
+                if (parseInt(val, 10) === 7) {
+                    idx++
+                    wrong = false;
+                } else
+                    wrong = true;
+            }
+            input.value = "";
+            update();
+        };
+    </script>
+</body>
+
+</html>

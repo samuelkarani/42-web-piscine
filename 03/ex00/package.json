@@ -1,0 +1,17 @@
+{
+  "name": "ex00",
+  "version": "1.0.0",
+  "description": "web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "smbaabu",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "nodejs-info": "^1.2.0"
+  }
+}

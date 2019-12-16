@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+
+#controls {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    max-width: 720px;
+    padding: 20px;
+}
+
+.flex>div {
+    width: 400px;
+}

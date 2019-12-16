@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div>
+        <form id="calculator">
+            <input id="left" type="text">
+            <select id="op" name="op">
+                <option value=""></option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="%">%</option>
+                </select>
+            <input id="right" type="text">
+            <input id="submit" type="submit" value="Try me">
+        </form>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+    function calc(e) {
+        const a = parseInt(document.getElementById("left").value, 10)
+        const b = parseInt(document.getElementById("right").value, 10)
+        const op = document.getElementById("op").value.trim();
+        let res;
+        if (!op) {
+            res = 'Error :(Invalid Operator)';
+        } else if (isNaN(a) || isNaN(b)) {
+            res = 'Error :(Invalid Value)';
+        } else if (a < 0 || b < 0) {
+            res = 'Error :(Negative number is not supported)';
+        } else if ((op === '%' || op === '/') &&
+            b === 0) {
+            res = `Error :(It's over 9000)`;
+        } else {
+            res = `${eval(`${a} ${op} ${b}`)}`;
+		}
+        alert(res);
+        console.info(res);
+    }
+    const form = document.getElementById("calculator");
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+    })
+    const submit = document.getElementById("submit");
+    submit.addEventListener('click', calc);
+    window.setInterval(() => alert("Please, use me..."), 30000);
+</script>
+
+</html>
