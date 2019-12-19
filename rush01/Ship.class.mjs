@@ -7,7 +7,7 @@ class Ship extends Component {
         this.origX = x;
         this.origY = y;
         this.power = 1;
-        this.shield = 5;
+        this.shield = 1;
 
         this.moveup = this.moveup.bind(this);
         this.movedown = this.movedown.bind(this);

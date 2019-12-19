@@ -91,7 +91,7 @@ class Game {
                 if (ship.collision(this.bullet)) {
                     this.bullet.stop();
                     this.bullet = null;
-                    ship.shield -= this.bullet.power * ship.power;
+                    ship.shield -= 1;
                     if (ship.shield <= 0) {
                         this[key] = this[key].filter(s => s !== ship);
                     }

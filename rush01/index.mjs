@@ -9,7 +9,7 @@ function init() {
     }
     const p2 = [];
     for (let i = 0; i < 5; i += 1) {
-        p2.push(new Ship(16, 4, "blue", 584 - i * 24, 0, `ship2_${i}`));
+        p2.push(new Ship(16, 4, "blue", i * 24, 300 - 4, `ship2_${i}`));
     }
     const o1 = new Obstacle(40, 10, "green", 300, 120);
     const o2 = new Obstacle(40, 10, "green", 0, 220);
