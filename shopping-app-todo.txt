@@ -1,0 +1,8 @@
+Shopping app todo
+categories
+customer edit basket
+navigate/sort by/filter/search category/price/recent
+admin write
+correct redirects
+oath/print?
+use template? use flash?
